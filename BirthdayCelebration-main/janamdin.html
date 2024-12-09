@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       
+        body {
+            background: linear-gradient(to top, #ff6f61, #ffbc42);
+            font-family: 'Open Sans', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            animation: bgGlow 4s ease-in-out infinite alternate;
+        }
+
+      
+        @keyframes bgGlow {
+            0% {
+                background: linear-gradient(to top, #a9ffa9, #6aff00);
+            }
+            50% {
+                background: linear-gradient(to top, #fbff00, #ffd75e);
+            }
+            100% {
+                background: linear-gradient(to top, #b9adcd, #00eaff);
+            }
+        }
+
+        
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+      
+        .message-box {
+            background-color: #e4f9ff;
+            padding: 40px 60px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            transform: translateY(-50px);
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards, slideIn 1s ease-in 0.5s forwards;
+        }
+
+        h1 {
+            color: #801262;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-family: 'Pacifico', cursive;
+            transform: translateY(-30px);
+            animation: slideIn 1s forwards 0.5s;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        h1:hover {
+            transform: translateY(-50px);
+            color: #ffbc42;
+        }
+
+        
+        .sub-message {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 30px;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeIn 1s forwards 1.5s;
+        }
+
+      
+        #her-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 10%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            transform: scale(0);
+            animation: scaleIn 0.6s forwards 1s;
+        }
+
+        .balloons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards 2s;
+        }
+
+        .balloon {
+            width: 70px;
+            height: 90px;
+            animation: float 3s infinite ease-in-out;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+        }
+
+        
+        .balloon:hover {
+            animation: bounce 0.5s ease-in-out;
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+        }
+
+       
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+       
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            75% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+       
+        button {
+            padding: 10px 20px;
+            background-color: #d2e00a;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 30px;
+            transform: scale(0);
+            animation: scaleIn 0.6s forwards 2s;
+        }
+
+        button:hover {
+            background-color: #ff4f3b;
+            transform: scale(1.1);
+        }
+
+      
+        .hidden-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 22px;
+            color: #333;
+            font-style: italic;
+        }
+
+      
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(45deg);
+            }
+        }
+
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: #eaea0e;
+            animation: confettiFall 2s infinite;
+            opacity: 0.7;
+        }
+
+        .confetti:nth-child(odd) {
+            background-color: #ffbc42;
+            animation-delay: 1s;
+        }
+
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(50px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message-box">
+            <!-- Her Picture -->
+            <img id="her-picture" src="src/images/hu3.jpg"Birthday Girl's Picture">
+
+            <h1>Happy Birthday{H U Z M A}</h1>
+            <p class="sub-message">Wishing you a Happy day filled with love, laughter, and joy!</p>
+            <div class="balloons">
+                <img src="https://i.pinimg.com/originals/49/07/82/49078239072dee326254d6a0d1a34ea9.gif" alt="Balloon 1" class="balloon">
+                <img src="https://media4.giphy.com/media/jn8kzevRmHxbVCPqlW/giphy.gif?cid=6c09b952r66d3zd0y0df6zapp6u1w71hlf4mfbuqqg1q1it9&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Balloon 2" class="balloon">
+                <img src="https://media4.giphy.com/media/9ranhFobYyoIrmQLnB/200w.gif?cid=6c09b95241q98hyf533nl01wimmio3vc4xftsskumbkhht2h&ep=v1_gifs_search&rid=200w.gif&ct=g" alt="Balloon 3" class="balloon">
+            </div>
+            <button class="btn" onclick="window.location.href='birth.html'">Good Morning Wishes</button>
+            <p id="hiddenMessage" class="hidden-message">You're amazing and I'm so lucky to know you!
+                wish for you on your birthday,
+                 whatever you ask may you receive, whatever you seek may you find,
+                  whatever you wish may it be fulfilled on your birthday and always 🎉</p>
+        </div>
+    </div>
+
+
+    <audio id="birthdayMusic" autoplay loop>
+        <source src="https://www.chosic.com/free-music/all/?keyword=Monk%20Turner%20%2B%20Fascinoma&artist" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Confetti effect -->
+    <div class="confetti" style="left: 10%;"></div>
+    <div class="confetti" style="left: 20%;"></div>
+    <div class="confetti" style="left: 30%;"></div>
+    <div class="confetti" style="left: 40%;"></div>
+    <div class="confetti" style="left: 50%;"></div>
+    <div class="confetti" style="left: 60%;"></div>
+    <div class="confetti" style="left: 70%;"></div>
+    <div class="confetti" style="left: 80%;"></div>
+    <div class="confetti" style="left: 90%;"></div>
+
+    <script>
+       
+        document.getElementById('revealBtn').addEventListener('click', function() {
+            const message = document.getElementById('hiddenMessage');
+            message.style.display = 'block'; // Reveal the message
+        });
+    </script>
+</body>
+</html>

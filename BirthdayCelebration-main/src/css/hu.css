@@ -1,0 +1,153 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ff9cbb, #6a5acd); 
+  color: #fff;
+  text-align: center;
+  perspective: 800px; /* Add perspective for 3D effects */
+  animation: fadeIn 2s ease-in-out;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.4); 
+  padding: 40px;
+  border-bottom: 3px solid #ffb6c1; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: slideDown 1.5s ease-out;
+  transform: rotateX(5deg); /* Add slight tilt */
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0;
+  color: #ffb6c1;
+  animation: slideUp 1.5s ease-out;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add 3D depth */
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 10px;
+  font-weight: 300;
+  color: #20b2aa; 
+  animation: fadeIn 2s ease-in-out 1s;
+}
+
+.content {
+  background: linear-gradient(135deg, rgba(215, 105, 184, 0.9), rgba(240, 248, 255, 0.8)); 
+  color: #333;
+  padding: 40px;
+  margin: 30px 10%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 2s ease-out 1.5s;
+  transform: rotateY(5deg); /* Add subtle rotation */
+  transition: transform 0.6s ease;
+}
+
+.content:hover {
+  transform: rotateY(0) scale(1.02); /* 3D hover effect */
+}
+
+.content img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 20px;
+  transition: transform 0.5s ease-in-out;
+  animation: zoomIn 2s ease-out;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.content img:hover {
+  transform: scale(1.1) rotateZ(10deg); /* Add 3D hover tilt */
+}
+
+.message {
+  font-size: 1.45em;
+  margin-top: 20px;
+  font-weight: 300;
+  color: #d94871; 
+  animation: fadeInText 1.5s ease-out 2s;
+}
+
+.message p {
+  margin: 15px 0;
+  line-height: 1.6;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Subtle depth */
+}
+
+.btn {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  background: linear-gradient(45deg, #aabc0a, #FF4500);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 20px;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+      transform: translateY(-30px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* From Uiverse.io by ilkhoeri */ 
